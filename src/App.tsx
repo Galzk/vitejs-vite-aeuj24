@@ -1,9 +1,8 @@
-import { Suspense, useState } from 'react';
-import LazyComponent from './LazyComponent';
+import { lazy, Suspense } from 'react';
+// import LazyComponent from './LazyComponent';
+const LazyComponent = lazy(() => import('./LazyComponent'));
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
       <h1>Should load component:</h1>
